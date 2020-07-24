@@ -1,26 +1,27 @@
 NewData1<-download_data
 NewData2<-S_P500
-#correpation and scatter plot of cumulative positive number versus Adj Close in S&P 500 (^GSPC) index. 
+#correlation and scatter plot of cumulative positive number versus Adj Close in S&P 500 (^GSPC) index. 
+par(mfcol=c(2,2))
 plot(x=NewData2$`Adj Close`, y=NewData1$positive,xlab = "Adj Close for S&P 500 (^GSPC)",
      ylab = "Cumulative positive number",
-     	 main = "Adj Cloase vs positive cases")
+     	 main = "Adj Cloase in S$P500 index vs cumulative positive cases")
 cor1<-cor(NewData2$`Adj Close`, NewData1$positive, method = c("pearson")) 
 cor1
-#correpation and scatter plot of positive increase number versus Adj Close in S&P 500 (^GSPC) index. 
+#correlation and scatter plot of positive increase number versus Adj Close in S&P 500 (^GSPC) index. 
 plot(x=NewData2$`Adj Close`, y=NewData1$positiveIncrease,xlab = "Adj Close for S&P 500 (^GSPC)",
      ylab = "new cases",
-     main = "Adj Cloase vs new cases")
+     main = "Adj Cloase in S$P500 index vs new cases")
 cor2<-cor(NewData2$`Adj Close`, NewData1$positive, method = c("pearson")) 
 cor2
-#correpation and scatter plot of death increase number versus Adj Close in S&P 500 (^GSPC) index. 
+#correlation and scatter plot of death increase number versus Adj Close in S&P 500 (^GSPC) index. 
 plot(x=NewData2$`Adj Close`, y=NewData1$deathIncrease,xlab = "Adj Close for S&P 500 (^GSPC)",
      ylab = "deathIncrease",
-     main = "Adj Cloase vs death")
+     main = "Adj Cloase in S$P500 index vs death")
 cor3<-cor(NewData2$`Adj Close`, NewData1$deathIncrease, method = c("pearson"))
 cor3
-#correpation and scatter plot of cumulative death number versus Adj Close in S&P 500 (^GSPC) index. 
+#correlation and scatter plot of cumulative death number versus Adj Close in S&P 500 (^GSPC) index. 
 plot(x=NewData2$`Adj Close`, y=NewData1$death,xlab = "Adj Close for S&P 500 (^GSPC)",
      ylab = "death",
-     main = "Adj Cloase vs death")
+     main = "Adj Cloase in S$P500 index vs cumulative death")
 cor4<-cor(NewData2$`Adj Close`, NewData1$death, method = c("pearson"))
 cor4
